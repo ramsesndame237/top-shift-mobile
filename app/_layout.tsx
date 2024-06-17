@@ -1,37 +1,42 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import React from 'react';
+import { Stack } from "expo-router";
+import Provider from "../providers/Provider";
+import { ThemeProvider } from '@react-navigation/native';
+import useSettingStore from '../store/useSettingStore';
+import { navigationTheme } from '@/theme';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
+  const { mode  } = useSettingStore();
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+      <Provider>
+        <ThemeProvider
+            value={navigationTheme[mode]}
+        >
+          <Stack
+              screenOptions={{
+                headerShown: false,
+              }}
+          >
+            <Stack.Screen
+                name={'(auth)/login/index'}
+            />
+            <Stack.Screen
+                name={'index'}
+            />
+            <Stack.Screen
+                name={'(auth)/reset-password/index'}
+                options={{}}
+            />
+            <Stack.Screen
+                name={'(auth)/register/index'}
+            />
+            <Stack.Screen
+                name={'(tabs)'}
+            />
+          </Stack>
+        </ThemeProvider>
+      </Provider>
   );
 }
