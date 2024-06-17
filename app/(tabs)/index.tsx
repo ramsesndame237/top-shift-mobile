@@ -1,36 +1,28 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import React, { Fragment } from 'react';
+import Header from '../../components/Headers/Header';
+import CartIcon from '../../assets/icons/cart_icon.svg';
+import CategoryList from '../../components/Home/CategoryList';
+import ProductList from '../../components/Home/ProductList';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import {Fragment} from "react";
 
 export default function HomeScreen() {
+
   return (
       <Fragment>
-       <ThemedText>
-           this is the mobile application
-       </ThemedText>
+        <Header
+            searchButton
+            searchType={'products'}
+            searchPlaceholder={'Typing to search products'}
+            RightContent={CartIcon}
+            subtitle={'Make home'}
+            title={'BEAUTIFUL'}
+        />
+        <CategoryList
+            categories={[]}
+        />
+        <ProductList
+            products={[]}
+        />
       </Fragment>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
