@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "extends": [
+    "universe/native"
+  ],
+  "rules": {
+    "prettier/prettier": "off",
+    "import/order": "off",
+    "node/handle-callback-err": "off",
+    "react/jsx-curly-brace-presence": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/jsx-fragments": "off",
+    "import/first": "off"
+  }
+}

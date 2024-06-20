@@ -1,0 +1,31 @@
+database schema: 
+
+create table product (
+  id bigint primary key generated always as identity,
+  label varchar(250),
+  time varchar(10),
+  active boolean,
+  quantity int
+);
+
+create table day (
+  id bigint primary key generated always as identity,
+  product_id int,
+  label varchar(250),
+  active boolean,
+  date varchar(10),
+  constraint fk_product foreign key (product_id) references product(id)
+);
+
+create table device (
+  id int primary key generated always as identity,
+  label varchar(250),
+  active boolean,
+  date varchar(250)
+);
+
+create table medecine (
+  id int primary key generated always as identity,
+  label varchar(250),
+  value varchar(250)
+);

@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "All Delice Afro",
+    "slug": "ada",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/app/icon.png",
+    "scheme": "ada",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#797C94"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "splash": {
+        "resizeMode": "contain",
+        "backgroundColor": "#797C94"
+      },
+      "entitlements": {
+        "com.apple.developer.networking.wifi-info": true
+      },
+      "bundleIdentifier": "com.ada"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/app/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [],
+      "package": "com.ada"
+    },
+    "plugins": [
+      "expo-localization"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}
