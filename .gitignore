@@ -9,7 +9,7 @@ node_modules/
 dist/
 web-build/
 .vscode/
-
+.idea/
 # Native
 *.orig.*
 *.jks
