@@ -1,14 +1,14 @@
 # React Native Template
 
-This project aims to be a strong foundation for react-native/expo applications. It provides a clear and organized structure, core dependencies, and boilerplate to jumpstart development.
+This is a E-commerce platform buidl with react native and expo
 
 ## Prerequisites
 
-- [Node.js > 12](https://nodejs.org) and npm (Recommended: Use [nvm](https://github.com/nvm-sh/nvm))
+- [Node.js > 20](https://nodejs.org) and npm (Recommended: Use [nvm](https://github.com/nvm-sh/nvm))
 - [Watchman](https://facebook.github.io/watchman)
 - [Xcode 17](https://developer.apple.com/xcode)
 - [Cocoapods 1.10.1](https://cocoapods.org)
-- [JDK > 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+- [JDK > 17](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 - [Android Studio and Android SDK](https://developer.android.com/studio)
 
 ## Base dependencies
